@@ -4,17 +4,22 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ApiService {
     messages = [];
+    users = [];
+    prodUrl = 'https://piyush20.herokuapp.com/';
+    localUrl = 'http://localhost:3000/';
+    host = this.prodUrl;
 
     constructor(private http: Http) {}
 
     getMessages() {
-        this.http.get('https://piyush20.herokuapp.com/posts').subscribe(res => {
+        this.http.get(this.host + 'posts').subscribe(res => {
             this.messages = res.json();
         });
     }
 
-    sendUserRegistration(registerData) {
-        this.http.post('https://piyush20.herokuapp.com/register', registerData).subscribe(res => {
+    getUsers() {
+        this.http.get(this.host + 'users').subscribe(res => {
+            this.messages = res.json();
         });
     }
 
