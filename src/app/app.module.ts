@@ -3,7 +3,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCardModule, MatToolbarModule, MatInputModule } from '@angular/material';
+import { MatButtonModule,
+         MatCardModule,
+         MatToolbarModule,
+         MatInputModule,
+         MatListModule } from '@angular/material';
 import { FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -13,16 +17,23 @@ import { MessagesComponent } from './messages.component';
 import { RegisterComponent } from './register.component';
 import { LoginComponent } from './login.component';
 import { UsersComponent } from './users.component';
+import { ProfileComponent } from './profile.component';
 
 const routes = [
   {path: 'register', component : RegisterComponent},
   {path: 'login', component : LoginComponent},
-  {path: 'users', component : UsersComponent}
+  {path: 'users', component : UsersComponent},
+  {path: 'profile/:id', component : ProfileComponent}
 ];
 
 @NgModule({
   declarations: [
-    AppComponent, MessagesComponent, RegisterComponent, LoginComponent, UsersComponent
+    AppComponent,
+    MessagesComponent,
+    RegisterComponent,
+    LoginComponent,
+    UsersComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +44,8 @@ const routes = [
     RouterModule.forRoot(routes),
     MatInputModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    MatListModule
   ],
   providers: [ApiService, AuthService],
   bootstrap: [AppComponent]

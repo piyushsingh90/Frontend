@@ -19,8 +19,12 @@ export class ApiService {
 
     getUsers() {
         this.http.get(this.host + 'users').subscribe(res => {
-            this.messages = res.json();
+            this.users = res.json();
         });
+    }
+
+    getProfile(id) {
+        return this.http.get(this.host + 'profile/' + id);
     }
 
 
