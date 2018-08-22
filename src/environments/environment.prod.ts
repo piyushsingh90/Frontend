@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  path: 'https://piyush18.herokuapp.com'
+  path: 'https://piyush20.herokuapp.com'
 };

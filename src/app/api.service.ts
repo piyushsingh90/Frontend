@@ -8,13 +8,13 @@ export class ApiService {
     constructor(private http: Http) {}
 
     getMessages() {
-        this.http.get('https://piyush18.herokuapp.com/posts').subscribe(res => {
+        this.http.get('https://piyush20.herokuapp.com/posts').subscribe(res => {
             this.messages = res.json();
         });
     }
 
     sendUserRegistration(registerData) {
-        this.http.post('https://piyush18.herokuapp.com/register', registerData).subscribe(res => {
+        this.http.post('https://piyush20.herokuapp.com/register', registerData).subscribe(res => {
         });
     }
 
